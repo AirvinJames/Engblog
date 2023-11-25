@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Condensed&display=swap');
 
 :root {
-  --background: #1e1e2e;
-  --alt-background: #313244;
-  --text-color: #cdd6f4;
-  --alt-text-color: #a6adc8;
+  --background: #1E1E24;
+  --alt-background: #18181B;
+  --text-color: #DDE6F8;
+  --alt-text-color: #A2A8BB;
   --accent-color: #a6e3a1;
+  --accent-color-alpha: #a6e3a1a6;
 
   --fs-100: 1.5rem;
   --fs-300: 1rem;
@@ -28,10 +29,96 @@ body {
 h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: var(--fs-800);
+  color: var(--text-color);
+  margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
 h2 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: var(--fs-400);
+  color: var(--alt-text-color);
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  
+  top: 0;
+  width: 100vw;
+  height: 3rem;
+  padding: 0 1rem 0 1rem;
+  background-color: var(--alt-background);
+  background-blend-mode: multiply;
+}
+
+#nav-links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+#nav-links li {
+  width: fit-content;
+  height: 100%;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+
+  background: 
+    linear-gradient(to right, var(--alt-background), var(--alt-background)),
+    linear-gradient(to right, var(--accent-color-alpha), var(--accent-color-alpha));
+  background-size: 100% 0.5em, 0 0.5em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+
+  padding: 0 1rem 0 1rem;
+  transition: scale 200ms linear, opacity 200ms linear, background-size 200ms;
+}
+
+.link {
+  line-height: 3.2rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  font-size: var(--fs-100);
+
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#nav-links:has(li:hover) > li:not(:hover) {
+  scale: 0.95;
+  opacity: 0.7;
+}
+
+#nav-links li:hover,
+#nav-links li:focus {
+  background-size: 0 1.4em, 100% 1.4em;
+
+  > a {
+    text-shadow: 2px 2px var(--background);
+  }
+}
+
+.text {
+  width: 70vw
+}
+
+#hero {
+  width: 100vw;
+  height: 50vw;
+}
