@@ -14,16 +14,15 @@
   --fs-500: 3rem;
   --fs-600: 3.5rem;
   --fs-700: 4rem;
-  --fs-800: 8.5rem;
+  --fs-800: 5.5rem;
   --fs-900: 10rem;
 }
 
 body {
   padding: 0;
   margin: 0;
-
   background-color: var(--background);
-  
+
 }
 
 h1 {
@@ -53,8 +52,7 @@ nav {
   width: 100vw;
   height: 3rem;
   padding: 0 1rem 0 1rem;
-  background-color: var(--alt-background);
-  background-blend-mode: multiply;
+  background: linear-gradient(to top, transparent, var(--alt-background));
 }
 
 #nav-links {
@@ -77,7 +75,7 @@ nav {
   justify-content: center;
 
   background: 
-    linear-gradient(to right, var(--alt-background), var(--alt-background)),
+    linear-gradient(to right, transparent, transparent),
     linear-gradient(to right, var(--accent-color-alpha), var(--accent-color-alpha));
   background-size: 100% 0.5em, 0 0.5em;
   background-position: 100% 100%, 0 100%;
@@ -118,7 +116,39 @@ nav {
   width: 70vw
 }
 
+.dots {
+  position: absolute;
+  z-index: -1;
+  background-image: radial-gradient(var(--alt-text-color) 1px, transparent 0);
+  background-size: 15px 15px;
+  background-position: -19px -19px;
+}
+
+#hero-dots-1 {
+  width: 240px;
+  height: 160px;
+  transform: translate(-50%, -25%);
+  opacity: 0.5;
+}
+
+#hero-dots-2 {
+  width: 150px;
+  height: 100px;
+  transform: translate(30rem, 8rem);
+}
+
+
 #hero {
   width: 100vw;
-  height: 50vw;
+  min-height: 100vh;
+}
+
+#hero h1 {
+  line-height: 10rem;
+}
+
+#coal {
+  position: absolute;
+  transform: translate(20%, -30%);
+  opacity: 0.7;
 }
