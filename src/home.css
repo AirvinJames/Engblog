@@ -129,7 +129,7 @@ nav {
 #nav-links li:not(:first-child):hover,
 #nav-links li:not(:first-child):focus {
   transform: translate(-10%, -10%);
-  box-shadow: 15px 15px var(--alt-text-color);
+  box-shadow: 15px 15px var(--accent-color-alpha);
 
   border: 1px solid var(--text-color);
 }
@@ -137,7 +137,7 @@ nav {
 #nav-links li:first-child:hover,
 #nav-links li:first-child:focus {
   transform: translate(-10%, 0%);
-  box-shadow: 15px 0px var(--alt-text-color);
+  box-shadow: 15px 0px var(--accent-color-alpha);
 
   border: 1px solid var(--text-color);
 }
