@@ -16,28 +16,37 @@
 }
 
 #header {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  grid-template-areas: 
-      'title . . .'
-      'name1 name2 splitter date';
+  justify-content: space-between;
+  align-items: start;
+  border-bottom: 0.5px solid var(--alt-text-color);
+  padding-bottom: 2rem;
+}
 
-      border-bottom: 2px solid var(--alt-text-color);
+.bottom, .left, .right {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.splitter {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 100%;
+  width: 1px;
+  background-color: var(--alt-text-color);
 }
 
 .title {
   color: var(--alt-text-color);
   grid-area: title;
 }
-
-.pfp-name1 {
-  grid-area: name1;
-}
-
-.pfp-name2 {
-  grid-area: name2;
-}
-
 #header p {
   margin: 0 0.01rem 0 0.01rem;
   color: var(--ui-text-color);
@@ -77,7 +86,7 @@
   line-height: 5rem;
 }
 
-#important {
+.important {
   text-indent: 0;
   padding-left: 3rem;
 }
@@ -107,3 +116,8 @@ figcaption a {
 figcaption a:hover {
   color: var(--accent-color-3);
 }
+
+.emoji {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
+}
+

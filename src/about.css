@@ -1,0 +1,38 @@
+.pfp {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.card {
+  background: var(--alt-background);
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  padding-left: 2rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 20px;
+
+  transition: 200ms ease-in-out;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#airvin {
+  object-position: center top;
+  
+}
+
+.cards:has(.card:hover) > .card:not(:hover) {
+  scale: 0.95;
+  opacity: 0.7;
+}
+
+.card p,h3 {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: var(--fs-500);
+  white-space: nowrap;
+}
