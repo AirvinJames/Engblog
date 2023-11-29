@@ -1,13 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Condensed&display=swap");
 
 body {
   overflow: hidden;
+  background: none;
+
+  background-image: url('../assets/wind-coal.avif');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: none;
+
+  animation: pan-image 10s linear infinite;
 }
 
-#header h3 {
-  margin: 0.5rem;
-  position: absolute;
-  top: 0;
+@keyframes pan-image {
+
+}
+
+main {
+  background-color: #1e1e24d7;
+  backdrop-filter: blur(10px);
+}
+
+/*.text {
+  padding: 4rem 4rem 4rem 4rem;
+  border-radius: 30px;
+  
+  background-color: #1e1e24d5;
+  backdrop-filter: blur(10px);
+}*/
+
+
+
+#header {
+  grid-area: logo;
+  border-top: var(--ui-border) 2px solid;
+  align-self: start;
 }
 
 .dots {
@@ -21,14 +48,15 @@ body {
 #hero-dots-1 {
   width: 240px;
   height: 160px;
-  transform: translate(-50%, -25%);
-  opacity: 0.5;
+  top: 10vh;
+  left: 5vw;
 }
 
 #hero-dots-2 {
   width: 300px;
   height: 100px;
-  transform: translate(120%, 210%);
+  top: 80vh;
+  left: 60vw;
 }
 
 #hero {
@@ -38,13 +66,14 @@ body {
 }
 
 #hero h1 {
-  line-height: 10rem;
+  line-height: var(--line-height);
 }
 
 #coal {
   position: absolute;
   transform: translate(20%, -65%);
-  opacity: 0.7;
+  z-index: -1;
+  width: var(--coal-width);
 }
 
 .cloud {
@@ -70,19 +99,39 @@ body {
 
 #hero {
   display: grid;
-  grid-template-columns: 5fr 1fr;
+
+  width: 100%;
+  height: 100%;
+
+  grid-template-areas:
+    "text text nav"
+    "text text nav"
+    "text text nav"
+    "logo . nav";
+
+  grid-template-columns: 7fr var(--nav-width);
+  grid-template-rows: 9.5fr 0.5fr;
+
   place-items: center;
 }
 
 .text {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  grid-area: text;
+  max-width: 59vw;
+}
+
+.text p {
+  z-index: 99;
 }
 
 nav {
   margin: 0;
   height: 100vh;
-  width: 100%;
+  width: var(--nav-width);
+  grid-area: nav;
+  border-left: 2px solid var(--ui-border);
+  background-color: var(--alt-background);
+  box-shadow: 0 0 15px var(--alt-background);
 }
 
 #nav-links {
@@ -105,46 +154,12 @@ nav {
 
   display: grid;
   place-items: center;
-
-}
-
-#nav-links li {
-  list-style-type: none;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-
-  display: grid;
-  place-items: center;
-
-  position: relative;
-  display: inline-block;
   transition: 300ms ease;
-
-  border: 2px solid var(--ui-border);
-  background-color: var(--background);
-}
-
-
-#nav-links li:not(:first-child):hover,
-#nav-links li:not(:first-child):focus {
-  transform: translate(-10%, -10%);
-  box-shadow: 15px 15px var(--accent-color-alpha);
-
-  border: 1px solid var(--text-color);
-}
-
-#nav-links li:first-child:hover,
-#nav-links li:first-child:focus {
-  transform: translate(-10%, 0%);
-  box-shadow: 15px 0px var(--accent-color-alpha);
-
-  border: 1px solid var(--text-color);
 }
 
 #nav-links li > a {
   font-size: var(--fs-400);
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   color: var(--text-color);
   text-decoration: none;
 
@@ -154,14 +169,11 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 200ms ease;
 }
 
 #nav-links:has(li:hover) > li:not(:hover) {
-  > a {
-  scale: 0.95;
-  }
+  scale: 0.8;
   opacity: 0.7;
 }
-
-
 

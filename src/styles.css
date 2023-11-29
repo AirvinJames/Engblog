@@ -1,23 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Condensed&family=Oswald&display=swap');
 
 :root {
   --background: #1E1E24;
   --alt-background: #18181B;
-  --text-color: #DDE6F8;
-  --alt-text-color: #A2A8BB;
+  --text-color: #cdd2da;
+  --alt-text-color: #b6bccf;
 
-  --ui-border: #5d6374;
+  --ui-border: #18181B;
 
   --accent-color-alpha: #a6e3a1a6;
+  --accent-color-2-alpha: #a1c0e3d8; 
 
-  --fs-100: 1.5rem;
-  --fs-300: 1.5rem;
-  --fs-400: 2.5rem;
+  --fs-100: 1.2rem;
+  --fs-200: 1.5rem;
+  --fs-300: 1.8rem;
+  --fs-400: 2.2rem;
   --fs-500: 3rem;
   --fs-600: 3.5rem;
   --fs-700: 4rem;
   --fs-800: 5.5rem;
   --fs-900: 10rem;
+
+  --nav-width: 15rem;
+  --line-height: 10rem;
+  --coal-width: 16rem;
 }
 
 body {
@@ -25,7 +31,16 @@ body {
   margin: 0;
   background-color: var(--background);
   overflow-x: hidden;
+  
 }
+
+/*#blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(15vmax);
+}*/
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
@@ -41,20 +56,26 @@ h2 {
 }
 
 h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: var(--fs-500);
   color: var(--alt-text-color);
 }
 
 h4 {
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: var(--fs-300);
-  color: var(--alt-text-color);
+  font-family: 'Oswald', sans-serif;
+  font-size: var(--fs-400);
+  color: var(--text-color);
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: var(--fs-200);
+  color: var(--text-color);
 }
 
 p {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  color: var(--text-color);
+  color: var(--alt-text-color);
   font-size: var(--fs-300);
 }
 
@@ -69,3 +90,61 @@ section {
   width: 70vw
 }
 
+/*.text p {
+  width: 60vw;
+  padding: 0 1rem 0 1rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
+}*/
+
+/*#blob {
+  position: absolute;
+  z-index: -999;
+  height: 31vmax;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+
+  transform-origin: center center;
+  animation: rotate 20s linear infinite;
+  background: linear-gradient(to left, var(--ui-border), var(--accent-color-2-alpha));
+  opacity: 0.25;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.1;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}*/
+
+
+
+
+@media (max-width: 760px) {
+  :root {
+    --fs-100: 0.25rem;
+    --fs-300: 1rem;
+    --fs-400: 1.58rem;
+    --fs-500: 1.6rem;
+    --fs-600: 2rem;
+    --fs-700: 2.5rem;
+    --fs-800: 3.8rem;
+    --fs-900: 10rem;
+    --nav-width: 8rem;
+    --coal-width: 8rem;
+
+    --line-height: 5rem;
+  }
+}

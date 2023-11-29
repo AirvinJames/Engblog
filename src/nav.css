@@ -1,5 +1,6 @@
 nav {
-  position: absolute;
+  position: sticky;
+  backdrop-filter: blur(10px);
   
   top: 0;
   width: 100vw;
@@ -45,7 +46,7 @@ nav {
   height: 100%;
   text-decoration: none;
   font-family: 'Bebas Neue';
-  font-size: var(--fs-100);
+  font-size: var(--fs-200);
 
   color: var(--text-color);
   text-decoration: none;
@@ -59,8 +60,4 @@ nav {
 #nav-links li:hover,
 #nav-links li:focus {
   background-size: 0 1.4em, 100% 1.4em;
-
-  > a {
-    text-shadow: 2px 2px var(--background);
-  }
 }
