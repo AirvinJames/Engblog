@@ -32,12 +32,17 @@
   --ui-text-color: #9298aa;
 }
 
+html {
+  background: #000;
+}
+
+
 body {
   padding: 0;
   margin: 0;
   background-color: var(--background);
   overflow-x: hidden;
-  
+  transition: opacity 200ms ease-in-out;
 }
 
 /*#blur {
@@ -104,6 +109,11 @@ article p {
   text-wrap: balance;
 }
 
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, span::selection{
+  background-color: var(--accent-color-2-alpha);
+  color: var(--background);
+}
+
 /*.text p {
   width: 60vw;
   padding: 0 1rem 0 1rem;
@@ -154,7 +164,6 @@ article p {
 #coal {
   position: absolute;
   transform: translate(20%, -65%);
-  z-index: -1;
   width: var(--coal-width);
 }
 
@@ -177,6 +186,27 @@ article p {
     transform: translate(10%, -30%);
   }
 
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  opacity: 0.4;
+
+  transition: 200ms ease-in-out;
+  width: fit-content;
+}
+
+footer img {
+  width: 200px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer:hover {
+  opacity: 1;
 }
 
 

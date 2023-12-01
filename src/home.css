@@ -63,6 +63,8 @@ main {
 
 #hero h1 {
   line-height: var(--line-height);
+  white-space: nowrap;
+  margin-left: -3rem;
 }
 
 

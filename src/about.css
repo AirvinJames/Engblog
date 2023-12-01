@@ -1,22 +1,24 @@
 .pfp {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 100%;
 }
 
 .card {
   background: var(--alt-background);
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   padding: 1rem;
-  padding-left: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   margin: 1rem 0 1rem 0;
   border-radius: 20px;
 
   transition: 200ms ease-in-out;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -33,6 +35,29 @@
 
 .card p,h3 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: var(--fs-500);
+  font-size: var(--fs-200);
   white-space: nowrap;
+}
+
+.text {
+  width: 80vw;
+  margin-top: 1rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p img {
+  width: 150px;
+  display: inline-block;
 }
