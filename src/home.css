@@ -26,7 +26,6 @@ main {
 }*/
 
 
-
 #header {
   grid-area: logo;
   border-top: var(--ui-border) 2px solid;

@@ -151,6 +151,29 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   to {
     rotate: 360deg;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }*/
 
 .green {
@@ -224,5 +247,21 @@ footer:hover {
     --coal-width: 8rem;
 
     --line-height: 5rem;
+  }
+}
+
+.float-down {
+  animation: float-down 1s ease 1;
+}
+
+@keyframes float-down {
+  from {
+    opacity: 0;
+    translate: 0% -10%;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0% 0%;
   }
 }
