@@ -3,6 +3,7 @@
 :root {
   --background: #1E1E24;
   --alt-background: #18181B;
+  --alt-alt-background: #1a1a1d;
   --text-color: #cdd2da;
   --alt-text-color: #b6bccf;
 
@@ -235,7 +236,7 @@ footer {
   margin-right: auto;
 }
 footer img {
-    height: 3vh;
+  height: 3vh;
 }
 
 footer p {

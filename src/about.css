@@ -15,7 +15,15 @@ h2 {
 }
 
 .card {
-  background: var(--alt-background);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--alt-background),
+    var(--alt-background) 10px,
+    var(--alt-alt-background) 10px,
+    var(--alt-alt-background) 20px
+  );
+  background-repeat:repeat;
+  background-size: 400% 400%;
   width: fit-content;
   height: fit-content;
   padding: 1rem;
@@ -30,8 +38,15 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: -0.5rem 0.5rem 20px var(--alt-background);
+
+  animation: pan-background 10s linear infinite;
 }
+
+@keyframes pan-background {
+  0%{background-position:0% 0%}
+  100%{background-position:200% 200%}
+}
+
 
 #airvin {
   object-position: center top;
@@ -43,12 +58,17 @@ h2 {
   opacity: 0.7;
 }
 
+
+
 .card p,h3 {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: var(--fs-200);
   white-space: nowrap;
 }
 
+.card:hover {
+  translate: 0 -2%;
+}
 .text {
   width: 80vw;
   margin-top: 1rem;
@@ -72,3 +92,20 @@ p img {
   display: inline-block;
 }
 
+.contact  {
+  padding: 0.3rem 2rem 0.3rem 2rem;
+  font-size: var(--fs-200);
+  font-family: 'Ubuntu Mono', monospace;
+  color: var(--accent-color-2);
+  border-radius: 5px;
+  border: 2px solid var(--accent-color-2);
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+  display: inline-block;
+}
+
+.contact:hover {
+  translate: 0 -20%;
+  background-color: var(--accent-color-2);
+  color: var(--alt-background);
+}
