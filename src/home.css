@@ -25,6 +25,27 @@ main {
   backdrop-filter: blur(10px);
 }*/
 
+footer {
+  position: sticky;
+  bottom: 0;
+  opacity: 0.4;
+
+  transition: 200ms ease-in-out;
+  width: fit-content;
+}
+
+footer img {
+  width: 10vw;
+}
+
+footer p {
+  margin: 0;
+  font-size: var(--fs-100);
+}
+
+footer:hover {
+  opacity: 1;
+}
 
 #header {
   grid-area: logo;
